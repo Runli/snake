@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 namespace Snake {
     class Program {
         static void Main(string[] args) {
-            HorizontalLine hLine = new HorizontalLine(5, 10, 2, '*');
-            hLine.Drow();
-            VerticalLine vLine = new VerticalLine(8, 2, 10, '#');
-            vLine.Drow();
+            Console.SetBufferSize(80, 25);
+
+            // Paint frame
+            Figure upLine = new HorizontalLine(0, 78, 0, '*');
+            Figure downLine = new HorizontalLine(0, 78, 24, '*');
+            Figure leftLine = new VerticalLine(0, 0, 24, '*');
+            Figure rightLine = new VerticalLine(78, 0, 24, '*');
+            upLine.Drow();
+            downLine.Drow();
+            leftLine.Drow();
+            rightLine.Drow();
+
+            // Paine point\
+
             Console.ReadLine();
         }     
     }
