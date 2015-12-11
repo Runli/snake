@@ -19,7 +19,9 @@ namespace Snake {
             leftLine.Drow();
             rightLine.Drow();
 
-            // Paine point\
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
 
             Console.ReadLine();
         }     
