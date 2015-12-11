@@ -48,5 +48,9 @@ namespace Snake {
             sym = ' ';
             Draw();
         }
+
+        internal bool IsHit(Point food) {
+            return food.x == x && food.y == y;
+        }
     }
 }
