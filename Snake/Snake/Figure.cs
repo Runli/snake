@@ -9,10 +9,24 @@ namespace Snake {
         protected List<Point> pList = null;
         
         // virtual чтобы потомки могли переопределять с помощью ключевого слова override
-        public virtual void Drow() {
+        public virtual void Draw() {
             foreach (Point p in pList) {
                 p.Draw();
             }
+        }
+
+        internal bool IsHit(Figure figure) {
+            foreach (var p in pList) {
+                if (figure.IsHit(p)) return true;
+            }
+            return false;
+        }
+
+        private bool IsHit(Point point) {
+            foreach (var p in pList) {
+                if (p.IsHit(point)) return true;
+            }
+            return false;
         }
     }
 }

@@ -13,9 +13,9 @@ namespace Snake {
             }
         }
 
-        public override void Drow() {
+        public override void Draw() {
             Console.ForegroundColor = ConsoleColor.Red;
-            base.Drow();
+            base.Draw();
             Console.ForegroundColor = ConsoleColor.White;
         }
     }

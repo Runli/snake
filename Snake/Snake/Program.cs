@@ -10,20 +10,14 @@ namespace Snake {
         static void Main(string[] args) {
             Console.SetBufferSize(80, 25);
 
-            // Paint frame
-            Figure upLine = new HorizontalLine(0, 78, 0, '*');
-            Figure downLine = new HorizontalLine(0, 78, 24, '*');
-            Figure leftLine = new VerticalLine(0, 0, 24, '*');
-            Figure rightLine = new VerticalLine(78, 0, 24, '*');
-            upLine.Drow();
-            downLine.Drow();
-            leftLine.Drow();
-            rightLine.Drow();
+            // Стены (границы поля)
+            Walls wall = new Walls(80, 25);
+            wall.Draw();
 
             // ОТрисовка точек
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Drow();
+            snake.Draw();
 
             // Создаем первую еду
             FoodCreator foodCreator = new FoodCreator(80, 25, '$');
@@ -32,6 +26,7 @@ namespace Snake {
 
             // Бесконечный цикл
             while (true) {
+                if (wall.IsHit(snake) || snake.IsHitTail()) break;
                 if (snake.Eat(food)) {
                     food = foodCreator.CreateFood();
                     food.Draw();
