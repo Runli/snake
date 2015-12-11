@@ -12,5 +12,10 @@ namespace Snake {
                 pList.Add(new Point(x, y, sym));
             }
         }
+        public override void Drow() {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            base.Drow();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }

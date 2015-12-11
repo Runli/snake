@@ -8,7 +8,8 @@ namespace Snake {
     class Figure {
         protected List<Point> pList = null;
         
-        public void Drow() {
+        // virtual чтобы потомки могли переопределять с помощью ключевого слова override
+        public virtual void Drow() {
             foreach (Point p in pList) {
                 p.Draw();
             }
