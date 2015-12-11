@@ -43,5 +43,10 @@ namespace Snake {
         public override string ToString() {
             return x + ", " + y + ", "  + sym;
         }
+
+        internal void Clear() {
+            sym = ' ';
+            Draw();
+        }
     }
 }
