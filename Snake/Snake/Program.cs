@@ -39,7 +39,7 @@ namespace Snake {
                     snake.HandleKey(key.Key);
                 }
             }
-            //Console.ReadLine();
+            Console.ReadLine();
         }     
     }
 }
